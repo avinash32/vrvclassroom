@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { 
+margin : 0;
+padding : 0;
+}
+
+.toDoContainer {
+width : 35vw;
+height : 25vw;
+border : 1px solid black;
+background-color : #eee;
+margin: auto;
+position: absolute;
+top: 0; 
+left: 0; 
+bottom: 0; 
+right: 0;
+overflow : scroll;
+}
+.insideContainer {
+width : 90%;
+height : auto;
+margin : 5% 5% 5% 5%;
+
+}
+.toDoContainer .insideContainer input[type=text] {
+width : 100%;
+border : 2px solid black; 
+height : 2vw;
+}
+</style>
+</head>
+<body>
+<div class = "toDoContainer">
+<div class = "insideContainer" id = "insideContainer">
+<h2 style = "font-family : verdana">TODO List<hr size = "2" color = "black"></h2>
+<input type = "text" placeholder = "New ToDo Item" id = "toDoTextBox" style = "margin-bottom : 2vw;"/>
+</div>
+</div>
+
+<script>
+var item = document.getElementById("toDoTextBox");
+item.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        insertNewItem(e);
+    }
+});
+
+function insertNewItem(e) {
+	
+    var text = e.target.value;
+	item.value = null;
+	
+	var container = document.getElementById("insideContainer");
+	
+	var label = document.createElement('label')
+	label.htmlFor = "toDoItem";
+	label.appendChild(document.createTextNode(text));
+	
+	
+	var checkbox = document.createElement('input');
+	checkbox.type = "checkbox";
+	checkbox.name = "toDoItem";
+	checkbox.value = "toDoItem";
+	checkbox.id = "toDoItem";
+	checkbox.onclick = function check(){
+	if(checkbox.checked){
+	label.style.textDecoration = "line-through";
+	}
+	};
+	
+	var lineBreak = document.createElement("br");
+	var horizontalRule = document.createElement("HR");
+	horizontalRule.size  = 1;
+	horizontalRule.color = "black";
+	
+	var deleteItems = document.createElement("A");
+	deleteItems.appendChild(document.createTextNode("Delete"));
+	deleteItems.href = "javascript:void(0)";
+	deleteItems.style.float = "right";
+	deleteItems.onclick = function deleteItemsFunction(){
+	container.removeChild(this);
+	container.removeChild(checkbox);
+	container.removeChild(lineBreak);
+	container.removeChild(horizontalRule);
+	container.removeChild(label);
+	}
+	
+	
+	container.appendChild(checkbox);
+	container.appendChild(label);
+	container.appendChild(deleteItems);
+	container.appendChild(horizontalRule);
+	container.appendChild(lineBreak);
+	
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Assigments
+
+1. move horizontal rule to css instead of javascript
+2. unregister all the event listeners on reload
+3. data seperation(add some li elements by default then dynamically added elements should get appended

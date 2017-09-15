@@ -1,0 +1,20 @@
+1)		As I understood, IIFE helps in avoiding over populating the global namespace. I tired declaring global variables inside the IIFE function as below
+				
+				(function(){
+					var itemsArray = [];
+					var index = 0;
+				})();
+				
+		But the itemsArray and index was still inaccessible. inorder to use them, I had to wrap all the other functions inside the IIFE as shown below
+		
+			(fucntion(){
+				var itemsArray = [];
+				var index = 0;
+				
+				function check(){.....}
+				function someFunction(){....}
+			})();
+			
+		Is this the correct way to do it? Because I'm not finding myself comfortable with wrapping all the functions inside one outer function.
+		
+2)

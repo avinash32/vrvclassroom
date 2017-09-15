@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+	<script src = "js/main.js"></script>
+</head>
+<body>
+	<div class = "outsideContainer">
+		<div class = "insideContainer">
+			<div class = "headerContainer">
+				<h2>TODO List</h2>
+			</div>
+			<input type = "text" class = "inputContainer" id = "newToDoItem"  placeholder = "New TODO Item"/>
+			<ul id ="itemContainerId" class = "itemContainer">
+				<li class = "customHorizontalRule" id = "listItem1">
+					<input type = "checkbox" id = "checkbox1" onclick = "checkBoxEffect(id);"/><span>Eat</span>
+					<a href = "#" class = "moveRightSide" id = "first" onclick = "removeElements(id);">
+						Pre-loaded item</a>
+				</li>
+				<li class = "customHorizontalRule" id = "listItem2"><input type = "checkbox" id = "checkbox2" 
+					onclick = "checkBoxEffect(id);"/><span>Sleep</span>
+					<a href = "#" class = "moveRightSide" id = "second" onclick = "removeElements(id);">
+					Pre-Loaded item</a>
+				</li>
+			</ul>
+			<input type = "button" class = "clearScreenButton" value = "Clear Screen" onclick = "clearScreen();"/>
+		</div>
+	</div>
+</body>
+</html>

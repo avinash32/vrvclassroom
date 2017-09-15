@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body {
+margin : 0;
+padding : 0;
+font-family : verdana;
+}
+.outsideContainer {
+width : 30vw;
+height : 25vw;
+background-color : #eee;
+border : 1px solid black;
+position : absolute;
+margin : auto;
+top: 0; 
+left: 0; 
+bottom: 0; 
+right: 0;
+overflow : scroll;
+}
+.insideContainer {
+width : 90%;
+height : auto;
+margin-left : 5%;
+margin-right : 5%;
+}
+.outsideContainer .insideContainer input[type=text] {
+width : 100%;
+height : 2vw;
+margin-bottom : 1vw;
+}
+</style>
+</head>
+<body>
+<div class = "outsideContainer">
+<div class = "insideContainer" id = "insideContainer">
+<h2 style = "margin-bottom : -1vw;">TODO List<hr color = "black" size = "2"></h2><br/>
+<input type = "text" placeholder =  "New TODO item" id = "toDoNewItem" />
+</div>
+</div>
+
+<script>
+var item = document.getElementById("toDoNewItem");
+item.addEventListener("keydown",function(e){
+if(e.keyCode === 13){
+insertNewToDo(e);
+}
+});
+
+function insertNewToDo(e){
+var toDoName = e.target.value;
+item.value = null;
+
+//get the referance of the container
+var container = document.getElementById("insideContainer");
+
+//create a label to asign a name to checkbox
+var label = document.createElement("label");
+label.appendChild(document.createTextNode(toDoName));
+label.style.marginLeft = "1vw";
+
+//creating checkbox
+var checkBox = document.createElement("input");
+checkBox.type = "checkbox";
+checkBox.id = "id";
+checkBox.name = "name";
+checkBox.value = "value"; 
+checkBox.style.marginLeft = "2vw";
+checkBox.onclick = function check(){
+if(checkBox.checked){
+label.style.textDecoration = "line-through";
+label.style.color = "#CAC6C6";
+}
+else {
+label.style.textDecoration = "none";
+label.style.color = "#000";
+}
+}
+
+//horizontal rule
+var horizontalRule = document.createElement("HR");
+horizontalRule.size = 1;
+horizontalRule.color = "black";
+
+//delete button
+var deleteButton = document.createElement("A");
+var deleteText = document.createTextNode("Delete");
+deleteButton.appendChild(deleteText);
+deleteButton.href = "#";
+deleteButton.style.float = "right";
+deleteButton.style.marginRight = "3vw";
+deleteButton.onclick = function deleteItems(){
+container.removeChild(this);
+container.removeChild(checkBox);
+container.removeChild(horizontalRule);
+container.removeChild(label);
+}
+
+//adding everything to container
+container.appendChild(checkBox);
+container.appendChild(label);
+container.appendChild(deleteButton);
+container.appendChild(horizontalRule);
+}
+</script>
+</body>
+</html>

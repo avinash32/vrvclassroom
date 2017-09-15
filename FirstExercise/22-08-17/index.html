@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+	<script src = "js/main.js"></script>
+</head>
+<body>
+	<div class = "outsideContainer">
+		<div class = "insideContainer">
+			<div class = "headerContainer">
+				<h2>TODO List</h2>
+			</div>
+			<input type = "text" class = "inputContainer" id = "newToDoItem"  placeholder = "New TODO Item"/>
+			<ul id ="itemContainerId" class = "itemContainer" onclick = "AssignListeners();">
+			</ul>
+			<input type = "button" class = "clearScreenButton" value = "Clear Screen" onclick = "clearScreen();"/>
+		</div>
+	</div>
+</body>
+</html>

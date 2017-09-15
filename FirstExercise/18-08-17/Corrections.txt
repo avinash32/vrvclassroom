@@ -1,0 +1,35 @@
+1)  Function which is assigned as the event listener to the text box can be written as a seperate function instead of being a closure(function keycheck).
+2)  I can skip creating newItem variable inside keycheck function and use newItemInputBox.value directly in the if statement.
+3)  Instead of creating letsAddNewItem() function, I can add the elements directly in the else statement itself.
+4)  instead of checking for empty text as if(newItem == null||newItem == ""){
+				alert("Please enter valid ToDO name");
+				console.log("No item was present in the text box");
+			}
+	I can use reguler expressions as var regex = /^\s*$/; for checking spaces.
+5)  in the function letsAddNewItem there was no need of creating the variable newItemInputBox. the value of the text box could
+	be read and value can be written to it directly.
+6)  the function changeState can be written as a separate function instead of declaring it as a closure.
+7)  all the onclick listeners can be written as seperate functions.
+8)  instead of writing deleteButton.appendChild(document.createTextNode("Delete")); this creates a new text node. Instead i can just do deleteButton.innerHTML = "Delete";
+9)  if all the event listeners are seperate functions, then the eventListeners can be de-registered easily by using removeEventListeners.
+10) indent properly
+11) only 80 characters in a line
+12) place javascript in the end of the body
+13) don't use onload and onunload in the body use DOMContentLoaded in javascript
+14) don't use <hr> instead use border-bottom
+15) Have to delete preloaded item also
+16) Store all the input todo items in an array for future use
+17) array should contain checkbox id, text. status
+18) don't create a textNode, instead use innerHTML
+19) don't create all elements using createElement but use an array and write tags inside it
+20) try using container.innerHTML = "" instead of removeChild();
+21) try unregistering event handlers like button.onclick = "" instead of removeEventListeners
+22) No two id should be same
+23) create a button clear screen, on pressing everything should be cleared from the screen. Even the containers and preloaded items
+24) Whatever is global in styling, declare it in body
+25) keep the styles of related items in one place. Don't make it jumbled
+26) remove redundant codes and whichever is not working
+27) On resizing, the items get hidden. Use media queries to solve this
+28) Add comments only where the code is impossible to understand without comments
+29) No DOM traversals
+30) Once the status of the checkbox is changed, it should be updated in the array which stores the input items.

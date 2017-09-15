@@ -1,0 +1,70 @@
+/* container which holds all the elements. outer most container */
+.outsideContainer {
+	width : 35vw;
+	height : 30vw;
+	position : absolute;
+	margin : auto;
+	top : 0;
+	right : 0;
+	bottom : 0;
+	left : 0;
+	background-color : #eee;
+	overflow : scroll;
+	font-family : verdana;
+	border : 2px solid #000;
+}
+
+/* to limit the width of all elements to 90% */
+.insideContainer {
+	width : 90%;
+	height : auto;
+	margin-left : 5%;
+	margin-right : 5%;
+	position : absolute;
+}
+
+/* container ho hold header */
+.headerContainer {
+	width : 100%;
+	height : auto;
+	margin-bottom : 0;
+}
+
+/*changing only the horizontal rule which is only applicable for header */
+.outsideContainer .insideContainer hr {
+	border : 1px solid black;
+}
+
+/* input box for entering new TODO item name*/
+.inputContainer {
+	width : 100%;
+	height : 2vw;
+	border : 2px solid black;
+	margin-top : 1vw;
+}
+
+/* specifying ul to not include any default list style */
+.outsideContainer .insideContainer ul {
+	margin-top : 2vw;
+	list-style-type : none;
+	position : absolute;
+}
+
+/* container for holding the list items */
+.itemContainer {
+	margin : 0;
+	padding : 0;
+	width : 100%;
+	height : auto;	
+}
+
+/* to create a strike through effect on checkbox label */
+.strikeItOut {
+	text-decoration : line-through;
+	color : #ccc;
+}
+
+
+.deleteButtonStyle {
+	float : right;
+}

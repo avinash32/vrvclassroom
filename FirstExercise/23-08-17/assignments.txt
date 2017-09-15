@@ -1,0 +1,11 @@
+1) Use Media query
+2) no inline event handler assigning
+3) Separate functions for all event handlers
+4) use innerHTML for clear screen
+5) register event listener for the clear screen and textbox on DOMContentLoaded
+6) store the input data
+7) Event delegation
+8) create a separate function called template which will return the array of elements to be inserted to the DOM
+9) Array.map to load the preloaded item into html file
+10) unregister the event handlers on clear screen
+11) html file should not contain any onclick
